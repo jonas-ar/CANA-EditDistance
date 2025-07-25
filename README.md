@@ -4,6 +4,7 @@
   * [ ] Explicações e comentários.
 * [ ] Implementação otimizada do algoritmo.
   * [ ] Explicações e comentários.
+* [ ] Comparar as duas versões em termos de uso de memória e desempenho.
 * [ ] Documentação.
 
 ## Referências
