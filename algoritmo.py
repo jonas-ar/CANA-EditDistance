@@ -15,13 +15,31 @@ def editDistance(s1, s2):
                 custo = 0
             else:
                 custo = 1
-            dp[i][j] = min(dp[i - 1][j] + 1, 
-                           dp[i][j - 1] + 1, 
-                           dp[i - 1][j - 1] + custo)
+            dp[i][j] = min(dp[i - 1][j] + 1, # deleção
+                           dp[i][j - 1] + 1, # inserção
+                           dp[i - 1][j - 1] + custo) # substituição
             
     return dp[m][n]
 
-s1 = "kitten"
-s2 = "sitting"
-distancia = editDistance(s1, s2)
-print(distancia)
+def editDistance_space_optimized(s1, s2):
+    # garante que s1 seja a menor string
+    # melhora a otimização de espaço
+    n, m = len(s1), len(s2)
+    if n > m:
+        s1, s2 = s2, s1
+        n, m = m, n
+        
+    linha_atual = range(n + 1)
+    for i in range(1, m + 1):
+        linha_anterior, linha_atual = linha_atual, [i] + [0] * n
+        for j in range(1, n + 1):
+            # calcula o custo das operações
+            insercao, remocao = linha_anterior[j] + 1, linha_atual[j - 1] + 1
+            substituicao = linha_anterior[j - 1]
+            # se houver caracteres diferentes, há custo na substituição
+            if s1[j - 1] != s2[i - 1]:
+                substituicao += 1
+            # escolhe a melhor operação baseando-se no seu custo
+            linha_atual[j] = min(insercao, remocao, substituicao)
+
+    return linha_atual[n]
