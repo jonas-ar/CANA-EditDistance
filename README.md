@@ -9,4 +9,8 @@
 
 ## Referências
 
-[Referência - Construção e Análise de Algoritmos - UFC - Programação Dinâmica - Distância de Edição](https://www.youtube.com/watch?v=bDiuP8pkrKo)
+[Construção e Análise de Algoritmos - UFC - Programação Dinâmica - Distância de Edição](https://www.youtube.com/watch?v=bDiuP8pkrKo)
+
+[Edit Distance Visually Explained | Dynamic Programming](https://www.youtube.com/watch?v=c3KYnQ-VEhs)
+
+[Distância de Edição - Programação Dinâmica - Leetcode 72 - Python](https://www.youtube.com/watch?v=XYi2-LPrwm4)
