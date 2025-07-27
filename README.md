@@ -20,10 +20,22 @@ Caso deseje isolar o seu ambiente:
 python -m venv venv
 ```
 
-Ative o ambiente virtual, por exemplo no powershell:
+Ative o ambiente virtual, por exemplo no powershell com o windows terminal:
 
 ```
 .\venv\Scripts\Activate.ps1
+```
+
+Se tiver problemas com o passo acima, consulte [isto](https://docs.python.org/3.15/library/venv.html). Mude as políticas do powershell com:
+
+```
+PS C:\> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Se estiver utilizando o terminal legacy:
+
+```
+venv\Scripts\activate.bat
 ```
 
 Instale a depedência:
