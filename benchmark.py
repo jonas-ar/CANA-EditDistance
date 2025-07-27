@@ -56,3 +56,26 @@ def exibe_resultados(resultados, titulo):
     print(f"Média de memória: {media_memoria:.6f} MiB")
     print(f"Desvio padrão da memória: {desvio_memoria:.6f} MiB")
     
+# exibe um caso simples para um único par de escolha arbitrária
+def bench_exibe_caso_simples(funcao, s1, s2, repeticoes):
+    distancia = funcao(s1, s2)
+    tempos = []
+    memorias = []
+    
+    # faz a chamada dos benchmarks
+    for _ in range(repeticoes):
+        tempo = bench_funcao_tempo(funcao, s1, s2, 1)
+        memoria = bench_funcao_mem(funcao, s1, s2)
+        tempos.append(tempo)
+        memorias.append(memoria)
+        
+    # utiliza da média como métrica quantitativa 
+    # pois os resultados podem mudar a cada execução
+    tempo_medio = sum(tempos) / repeticoes
+    memoria_media = sum(memorias) / repeticoes
+    
+    print(f"Strings: '{s1}' e '{s2}'")
+    print(f"Distância: {distancia}")
+    print(f"Tempo médio: {tempo_medio:.6f}s")
+    print(f"Uso de memória média: {memoria_media:.6f} MiB")
+    
