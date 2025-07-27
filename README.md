@@ -7,6 +7,11 @@
 * [ ] Comparar as duas versões em termos de uso de memória e desempenho.
 * [ ] Documentação.
 
+## Requisitos
+
+1. python3+
+2. memory_profiler
+
 ## Execução do programa
 
 Caso deseje isolar o seu ambiente:
