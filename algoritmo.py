@@ -31,6 +31,12 @@ def editDistance_space_optimized(s1, s2):
         
     linha_atual = range(n + 1)
     for i in range(1, m + 1):
+        # só é necessário a linha anterior e a linha atual da matriz,
+        # não ela inteira. Isso economiza memória
+        #
+        # a linha atual é reiniciada para calcular a nova linha da matriz,
+        # definindo o custo de transformação em uma string vazia (deletar),
+        # preenchendo o restante da linha com zeros para serem calculados
         linha_anterior, linha_atual = linha_atual, [i] + [0] * n
         for j in range(1, n + 1):
             # calcula o custo das operações
